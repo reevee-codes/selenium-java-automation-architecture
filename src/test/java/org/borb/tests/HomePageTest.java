@@ -8,9 +8,6 @@ import org.slf4j.LoggerFactory;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import org.testng.Assert;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Test;
 
 public class HomePageTest extends BasePageTest {
 
@@ -36,6 +33,6 @@ public class HomePageTest extends BasePageTest {
 
     @Test
     public void testIfLoginForStandardUserWorks() {
-       //todo
+        Assert.assertTrue(homePage.isSucessfullyLoggedIn());
     }
     }

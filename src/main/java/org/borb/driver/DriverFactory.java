@@ -14,21 +14,13 @@ public class DriverFactory {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(DriverFactory.class);
 
-    private static final String BROWSER_FROM_BUILD_ARG = System.getProperty("browser");
     private static final String CHROME_DRIVER_PATH = "src/main/resources/drivers/chromedriver.exe";
     private static final String GECKO_DRIVER_PATH = "src/main/resources/drivers/geckodriver.exe";
     private static final String EDGE_DRIVER_PATH = "src/main/resources/drivers/MicrosoftEdgeDriver.exe";
 
     private DriverFactory() {
-        //utility class
     }
 
-    /**
-     * Create {@link WebDriver} instance according to the browser type parameter.
-     *
-     * @param browserType the browser to start
-     * @return the specific {@link WebDriver} instance
-     */
     public static WebDriver getDriver(String browserType) {
         WebDriver driver;
 

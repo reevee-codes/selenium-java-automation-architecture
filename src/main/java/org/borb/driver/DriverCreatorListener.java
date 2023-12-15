@@ -14,46 +14,23 @@ public class DriverCreatorListener implements ITestListener, ISuiteListener {
     private static final Logger LOGGER = LoggerFactory.getLogger(DriverCreatorListener.class);
     private long startTime;
 
-    /**
-     * This method is invoked at the start of the test suite execution.
-     *
-     * @param suite {@link ISuite}
-     */
     @Override
     public void onStart(ISuite suite) {
         startTime = System.currentTimeMillis();
     }
 
-    /**
-     * This method is invoked at the end of the test suite execution.
-     *
-     * @param suite {@link ISuite}
-     */
     @Override
     public void onFinish(ISuite suite) {
         double finishTime = (System.currentTimeMillis() - startTime);
         LOGGER.info("Suite execution took {} ms", finishTime);
     }
 
-    /**
-     * This method is invoked at the start of the test class execution. It initializes the ThreadLocal
-     * {@link WebDriver} instance.
-     *
-     * @param context {@link ITestContext}
-     */
     @Override
     public void onStart(ITestContext context) {
-//        new PropertyReader();
         WebDriver driver = DriverFactory.getDriver();
         ThreadLocalDriverManager.setDriver(driver);
     }
 
-    /**
-     * This method is invoked at the end of the test class execution. It closes the ThreadLocal {@link
-     * WebDriver} instance.
-     *
-     * @param context {@link ITestContext}
-     */
     @Override
     public void onFinish(ITestContext context) {
         WebDriver driver = ThreadLocalDriverManager.getDriver();

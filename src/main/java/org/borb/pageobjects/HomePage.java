@@ -1,10 +1,11 @@
 package org.borb.pageobjects;
 
 import org.borb.driver.ElementFinder;
-import org.borb.view.HomePageElements;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
+
+import static org.borb.view.HomePageElements.*;
+import static org.borb.view.LoggedUserPageElements.appLogoOnLoggedInScreen;
 
 public class HomePage extends BasePage {
 
@@ -22,7 +23,24 @@ public class HomePage extends BasePage {
 
     public boolean isHomePageDisplayed() {
         return ElementFinder.isElementDisplayed(
-                driver.findElement(By.xpath("//div[@class='login_logo']")));
+                driver.findElement(loginLogo));
+    }
+
+    public boolean isSucessfullyLoggedIn() {
+        ElementFinder.waitForElementClickable(driver,
+                        driver.findElement(usernameInput))
+                .sendKeys(testUser1);
+
+        ElementFinder.waitForElementClickable(driver,
+                        driver.findElement(passwordInput))
+                .sendKeys(pass);
+
+        ElementFinder.waitForElementClickable(driver,
+                driver.findElement(loginButton)).click();
+
+        ElementFinder.waitForElementDisplayed(driver, driver.findElement(appLogoOnLoggedInScreen));
+
+        return ElementFinder.isElementDisplayed(driver.findElement(appLogoOnLoggedInScreen));
     }
 }
 
