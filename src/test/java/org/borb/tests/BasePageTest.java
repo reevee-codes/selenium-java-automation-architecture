@@ -1,7 +1,7 @@
 package org.borb.tests;
 
-import org.borb.driver.DriverCreatorListener;
-import org.borb.driver.ThreadLocalDriverManager;
+import driver.DriverCreatorListener;
+import driver.ThreadLocalDriverManager;
 //import org.borb.reporting.ScreenshotListener;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Listeners;
@@ -12,5 +12,4 @@ public abstract class BasePageTest {
     protected WebDriver getDriverInstance() {
         return ThreadLocalDriverManager.getDriver();
     }
-
 }

@@ -1,8 +1,6 @@
 package org.borb.tests;
 
-import org.borb.driver.DriverFactory;
-import org.borb.pageobjects.HomePage;
-import org.openqa.selenium.WebDriver;
+import pageobjects.HomePage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.Assert;
@@ -15,11 +13,9 @@ public class HomePageTest extends BasePageTest {
 
     private HomePage homePage;
 
-
     @BeforeClass
     public void setUp() {
-        WebDriver driver = DriverFactory.getDriver("chrome");
-        this.homePage = new HomePage(driver);
+        this.homePage = new HomePage(getDriverInstance());
         LOGGER.info("Launching home page.");
         homePage.launchHomePage();
     }
