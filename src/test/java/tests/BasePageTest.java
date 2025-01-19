@@ -1,4 +1,4 @@
-package org.borb.tests;
+package tests;
 
 import driver.DriverCreatorListener;
 import driver.ThreadLocalDriverManager;

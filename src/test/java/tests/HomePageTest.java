@@ -1,4 +1,4 @@
-package org.borb.tests;
+package tests;
 
 import pageobjects.HomePage;
 import org.slf4j.Logger;
