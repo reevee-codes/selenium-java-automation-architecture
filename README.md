@@ -1,1 +1,1 @@
-very basic framework for https://www.saucedemo.com/
+Test automation framework for https://www.saucedemo.com/
