@@ -1,1 +1,1 @@
-sample framework for https://www.saucedemo.com/
+very basic framework for https://www.saucedemo.com/
