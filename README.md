@@ -1,1 +1,1 @@
-Test automation framework for https://www.saucedemo.com/
+Test automation framework (Frontend) for https://www.saucedemo.com.
